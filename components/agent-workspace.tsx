@@ -27,6 +27,7 @@ import PerformanceLoop from "./performance-loop";
 import MorningInbox from "./morning-inbox";
 import AgentBriefing, { MeetMorgan } from "./agent-briefing";
 import ArchitectureOutput from "./architecture-output";
+import CommandCenter from "./command-center";
 import { useCaseCandidates } from "../lib/use-case-candidates";
 import { SaveContext } from "./save-footer";
 import "./agent-workspace.css";
@@ -220,6 +221,7 @@ function MorganScreen({
   onArchitectureInteraction,
   onCampaignResults,
   campaignResultsOpen = false,
+  onCommandCenter,
 }: {
   children: ReactNode;
   workflow?: boolean;
@@ -230,6 +232,7 @@ function MorganScreen({
   onArchitectureInteraction?: (activity: string) => void;
   onCampaignResults?: () => void;
   campaignResultsOpen?: boolean;
+  onCommandCenter?: () => void;
 }) {
   function jump(selector: string, e: React.MouseEvent<HTMLButtonElement>) {
     const screen = e.currentTarget.closest(".monitor-screen");
@@ -279,6 +282,11 @@ function MorganScreen({
               >
                 <span aria-hidden="true">＋</span> New chat
               </button>
+              {onCommandCenter && (
+                <button className="command-center-link" onClick={onCommandCenter}>
+                  <span aria-hidden="true">◫</span> Command center
+                </button>
+              )}
               {onRestart && (
                 <button className="restart-chat" onClick={onRestart}>
                   <span aria-hidden="true">↺</span> Restart prototype
@@ -356,7 +364,7 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
   const [error, setError] = useState("");
   const [architectureWorkflow, setArchitectureWorkflow] = useState("");
   const [saved, setSaved] = useState("");
-  const [page, setPage] = useState(prototypeOnly ? "workspace" : "intro");
+  const [page, setPage] = useState(prototypeOnly ? "command" : "intro");
   const [showStepContext, setShowStepContext] = useState(false);
   const [architectureActivity, setArchitectureActivity] = useState("");
   const [architectureRoute, setArchitectureRoute] = useState<string[] | null>(
@@ -519,7 +527,7 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
         "architecture",
         "readout",
       ].includes(view) &&
-      (!prototypeOnly || ["workspace", "performance", "architecture"].includes(view))
+      (!prototypeOnly || ["command", "workspace", "performance", "architecture"].includes(view))
     )
       setPage(view);
     const day = params.get("day");
@@ -634,7 +642,9 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
             <button onClick={() => download(true)}>Export backup</button>
           </p>
         )}
-        {page === "intro" ? (
+        {page === "command" && prototypeOnly ? (
+          <CommandCenter onOpenMorgan={() => setPage("workspace")} />
+        ) : page === "intro" ? (
           <AgentBriefing
             onEnter={() => {
               setPage("meet");
@@ -763,6 +773,7 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
             <MorganScreen
               onRestart={resetPrototype}
               onToggleArchitecture={() => setPage("architecture")}
+              onCommandCenter={prototypeOnly ? () => setPage("command") : undefined}
             >
               <PerformanceLoop
                 session={s}
@@ -791,7 +802,10 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
             <section className="agent-stage" id="morgan-day">
               {s.day.moment === 0 ? (
                 <div className="prototype-screen-layout">
-                  <MorganScreen onRestart={resetPrototype}>
+                  <MorganScreen
+                    onRestart={resetPrototype}
+                    onCommandCenter={prototypeOnly ? () => setPage("command") : undefined}
+                  >
                     <div className="day-arrival">
                       <span className="agent-kicker">
                         08:45 · Morgan arrives
@@ -826,6 +840,7 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
                     workflow
                     onRestart={resetPrototype}
                     onToggleArchitecture={() => setPage("architecture")}
+                    onCommandCenter={prototypeOnly ? () => setPage("command") : undefined}
                     onCampaignResults={() =>
                       setShowRecapResults((shown) => !shown)
                     }
@@ -999,6 +1014,7 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
                     <MorganScreen
                       workflow
                       onRestart={resetPrototype}
+                      onCommandCenter={prototypeOnly ? () => setPage("command") : undefined}
                       onToggleArchitecture={() =>
                         setShowStepContext((shown) => !shown)
                       }
