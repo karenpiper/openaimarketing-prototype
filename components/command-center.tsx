@@ -86,26 +86,29 @@ export default function CommandCenter({
         </aside>
       </section>
 
-      <section className="command-metrics" aria-label="Portfolio health">
+      <div className="command-scale" aria-label="Operating scale">
+        386 enterprise accounts <span>·</span> 2,148 buying groups <span>·</span> 31,602 people
+      </div>
+      <section className="command-metrics" aria-label="Business outcomes">
         <article>
-          <span>Enterprise accounts</span>
-          <strong>386</strong>
-          <small>$486M in active pipeline</small>
+          <span>Value realization · AAR</span>
+          <strong>$38.4M</strong>
+          <small>Illustrative AAR created and realized</small>
         </article>
         <article>
-          <span>Buying groups</span>
-          <strong>2,148</strong>
-          <small>146 advancing · 7 decision-ready</small>
+          <span>Pipeline value</span>
+          <strong>$486M</strong>
+          <small>Qualified enterprise pipeline, including expansion</small>
         </article>
         <article>
-          <span>People in active buying groups</span>
-          <strong>31,602</strong>
-          <small>Personalized role and account paths</small>
+          <span>Pipeline velocity</span>
+          <strong>42 days</strong>
+          <small>From engaged buying group to next decision</small>
         </article>
         <article className="command-metric-attention">
-          <span>Needs human judgment</span>
-          <strong>4</strong>
-          <small>2 approvals · 1 data exception · 1 decision</small>
+          <span>Release-ready cadence</span>
+          <strong>6.4 days</strong>
+          <small>Product release to approved enterprise action</small>
         </article>
       </section>
 
