@@ -6,7 +6,7 @@ type View = "priorities" | "orchestration" | "controls" | "capacity" | "learning
 type Filter = "All" | "Healthcare" | "Financial services" | "Logistics" | "Software";
 
 const accounts = [
-  { account: "Northstar Health", industry: "Healthcare", owner: "Morgan Piper", groups: 4, people: 18, value: "$4.2M", status: "Decision needed", need: "Sponsor path stalled while technical adoption grows.", action: "Approve coordinated plan" },
+  { account: "Northstar Health", industry: "Healthcare", owner: "Morgan Smith", groups: 4, people: 18, value: "$4.2M", status: "Decision needed", need: "Sponsor path stalled while technical adoption grows.", action: "Approve coordinated plan" },
   { account: "Cedar & Finch", industry: "Financial services", owner: "Alex Chen", groups: 3, people: 14, value: "$1.8M", status: "Approval gate", need: "Brand and legal review is blocking a ready audience plan.", action: "Release approval" },
   { account: "Meridian Logistics", industry: "Logistics", owner: "Samira Jones", groups: 6, people: 43, value: "$2.6M", status: "Launch collision", need: "Event follow-up and product-release activity target the same group.", action: "Connect plans" },
   { account: "Harborline Bank", industry: "Financial services", owner: "Data operations", groups: 2, people: 18, value: "$1.1M", status: "Data exception", need: "Identity matching is holding eligible people from activation.", action: "Resolve exception" },
