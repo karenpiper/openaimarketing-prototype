@@ -4582,6 +4582,41 @@
 .prototype-screen-layout .monitor-wrap {
   margin: 0;
 }
+
+/* The standalone deployment is the workspace itself: no presentation monitor
+   or surrounding canvas, just the full browser surface. */
+.agent-app.prototype-only {
+  min-height: 100svh;
+  background: #fff;
+}
+.agent-app.prototype-only .agent-main.prototype-main,
+.agent-app.prototype-only .prototype-main .agent-stage,
+.agent-app.prototype-only .prototype-screen-layout,
+.agent-app.prototype-only .prototype-screen-layout .monitor-wrap,
+.agent-app.prototype-only .prototype-screen-layout .monitor-bezel,
+.agent-app.prototype-only .prototype-screen-layout .monitor-screen {
+  width: 100%;
+  min-height: 100svh;
+  height: 100svh;
+  margin: 0;
+}
+.agent-app.prototype-only .prototype-main .agent-stage {
+  padding: 0;
+}
+.agent-app.prototype-only .monitor-label,
+.agent-app.prototype-only .monitor-camera,
+.agent-app.prototype-only .monitor-chin {
+  display: none;
+}
+.agent-app.prototype-only .prototype-screen-layout .monitor-bezel {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.agent-app.prototype-only .prototype-screen-layout .monitor-screen {
+  border-radius: 0;
+}
 .prototype-screen-layout .monitor-label {
   margin: 0 4px 10px;
   font-size: 10px;

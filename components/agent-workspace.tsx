@@ -597,7 +597,7 @@ export default function AgentWorkspace({ prototypeOnly = false }: { prototypeOnl
   const arch = architectureSession(s);
   return (
     <SaveContext.Provider value={{ save, revision: s, error }}>
-      <div className="agent-app">
+      <div className={`agent-app${prototypeOnly ? " prototype-only" : ""}`}>
         {!prototypeOnly && <header className="agent-top">
           <a
             href="#"
