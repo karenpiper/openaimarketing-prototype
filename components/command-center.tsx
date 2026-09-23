@@ -7,6 +7,7 @@ const workflows = [
     status: "Decision needed",
     detail: "Business sponsor path is ready for Morgan’s review.",
     value: "$4.2M expansion",
+    scope: "4 buying groups · 18 people",
     action: "Open Morgan’s workspace",
   },
   {
@@ -15,6 +16,7 @@ const workflows = [
     status: "In approval",
     detail: "Sponsor brief is with brand and legal in Adobe Workfront.",
     value: "$1.8M pipeline",
+    scope: "3 buying groups · 14 people",
   },
   {
     account: "Meridian Logistics",
@@ -22,6 +24,7 @@ const workflows = [
     status: "Activating",
     detail: "Event follow-up is routing into Adobe Marketo / AJO.",
     value: "$2.6M influenced",
+    scope: "6 buying groups · 43 people",
   },
   {
     account: "Harborline Bank",
@@ -29,6 +32,7 @@ const workflows = [
     status: "Exception",
     detail: "Unmatched accounts remain held from audience activation.",
     value: "18 records held",
+    scope: "2 buying groups · 18 people",
   },
 ];
 
@@ -40,24 +44,38 @@ export default function CommandCenter({
   return (
     <main className="command-center">
       <header className="command-topbar">
-        <div>
-          <span className="command-brand">OpenAI Frontier</span>
-          <span className="command-brand-subtitle">Enterprise marketing operations</span>
-        </div>
-        <div className="command-topbar-meta">
-          <span>Tuesday · 09:30</span>
-          <b>Live operating view</b>
-        </div>
+        <span className="command-brand">ChatGPT Work</span>
+        <span className="command-topbar-title">Enterprise marketing</span>
+        <span className="command-avatar">M</span>
       </header>
-
+      <div className="command-desktop">
+        <aside className="command-sidebar">
+          <button className="command-new-chat"><span>＋</span> New chat</button>
+          <button className="command-thread-active"><span>◫</span> Command center</button>
+          <span className="command-sidebar-label">Project</span>
+          <button className="command-project"><span>▣</span> Enterprise adoption</button>
+          <span className="command-sidebar-label">Recent</span>
+          <button onClick={onOpenMorgan}>Morgan’s workspace</button>
+          <button>Campaign brief</button>
+        </aside>
+        <div className="command-thread">
+          <div className="command-thread-intro">
+            <span>09:30 · Marketing operations</span>
+            <p>Show me the enterprise pipeline work that needs human attention today.</p>
+          </div>
+          <div className="command-agent-reply">
+            <span>✳</span>
+            <p><b>Marketing operations agent</b><br />I’ve assembled the portfolio view below. It combines active account workflows, decision gates and the latest learning signals.</p>
+          </div>
+          <section className="command-artifact" aria-label="Marketing operations command center">
       <section className="command-hero">
         <div>
           <span className="command-eyebrow">Portfolio command center</span>
           <h1>What needs the team’s attention now?</h1>
           <p>
-            A shared view of enterprise pipeline, work in motion and the few
-            decisions that need human judgment. Signals and actions shown here
-            are illustrative.
+            A shared view across hundreds of accounts, thousands of buying
+            groups and the people within them. It elevates only the work that
+            needs human judgment. Signals and actions shown here are illustrative.
           </p>
         </div>
         <aside className="command-brief">
@@ -70,19 +88,19 @@ export default function CommandCenter({
 
       <section className="command-metrics" aria-label="Portfolio health">
         <article>
-          <span>Pipeline influenced</span>
-          <strong>$18.6M</strong>
-          <small>Across 12 active account plays</small>
+          <span>Enterprise accounts</span>
+          <strong>386</strong>
+          <small>$486M in active pipeline</small>
         </article>
         <article>
-          <span>Buying groups advancing</span>
-          <strong>7</strong>
-          <small>3 have a decision path ready</small>
+          <span>Buying groups</span>
+          <strong>2,148</strong>
+          <small>146 advancing · 7 decision-ready</small>
         </article>
         <article>
-          <span>Workflows in motion</span>
-          <strong>26</strong>
-          <small>Signals, campaigns, reviews and learning</small>
+          <span>People in active buying groups</span>
+          <strong>31,602</strong>
+          <small>Personalized role and account paths</small>
         </article>
         <article className="command-metric-attention">
           <span>Needs human judgment</span>
@@ -106,7 +124,7 @@ export default function CommandCenter({
                 <div className="command-workflow-title">
                   <div>
                     <h3>{workflow.account}</h3>
-                    <span>{workflow.owner}</span>
+                  <span>{workflow.owner} · {workflow.scope}</span>
                   </div>
                   <b className={`command-status ${workflow.status.toLowerCase().replaceAll(" ", "-")}`}>
                     {workflow.status}
@@ -149,6 +167,10 @@ export default function CommandCenter({
           </section>
         </aside>
       </section>
+          </section>
+          <div className="command-composer">Ask about portfolio performance or a specific account…</div>
+        </div>
+      </div>
     </main>
   );
 }
