@@ -5714,3 +5714,26 @@
 .jeff-priority-board { margin: 0 34px 18px; overflow: hidden; border: 1px solid #c8dbcc; border-radius: 14px; background: #f3f8f3; }.jeff-priority-board > header { display: flex; justify-content: space-between; gap: 20px; padding: 22px; border-bottom: 1px solid #d7e4d9; }.jeff-priority-board h2 { margin: 6px 0 7px; color: #183a31; font-size: 27px; letter-spacing: -.055em; }.jeff-priority-board header p { max-width: 610px; margin: 0; color: #5c6c61; font-size: 12px; line-height: 1.45; }.jeff-priority-board > div { padding: 0 22px; background: #fff; }.jeff-priority-board article { display: grid; grid-template-columns: 34px minmax(0,1fr) 110px; gap: 13px; align-items: center; padding: 15px 0; border-bottom: 1px solid #e5ece5; }.jeff-priority-board article:last-child { border-bottom: 0; }.jeff-priority-board article > span { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: #e6f1e7; color: #2d6041; font-size: 9px; font-weight: 750; }.jeff-priority-board article b { color: #65766b; font-size: 10px; }.jeff-priority-board article h3 { margin: 4px 0; color: #1e4330; font-size: 16px; letter-spacing: -.035em; }.jeff-priority-board article p { margin: 0; color: #637167; font-size: 11px; line-height: 1.38; }.jeff-priority-board article button { justify-self: end; padding: 8px 9px; border: 0; border-radius: 7px; background: #1b5138; color: #fff; font-size: 10px; font-weight: 700; }
 @media (max-width: 800px) { .jeff-priority-board { margin-left: 18px; margin-right: 18px; }.jeff-priority-board > header { display: grid; }.jeff-priority-board article { grid-template-columns: 28px 1fr; }.jeff-priority-board article button { grid-column: 2; justify-self: start; } }
 .jeff-priority-board article b i { margin-left: 6px; padding: 3px 5px; border-radius: 999px; background: #f4e8d8; color: #8a5522; font-size: 8px; font-style: normal; letter-spacing: .03em; text-transform: uppercase; }
+.command-portfolio-lenses { display: flex; align-items: center; gap: 7px; overflow-x: auto; margin: 0 34px 16px; padding: 11px 0; border-bottom: 1px solid #dbe3db; }
+.command-portfolio-lenses > span { flex: 0 0 auto; margin-right: 4px; color: #778278; font-size: 10px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.command-portfolio-lenses button { flex: 0 0 auto; padding: 7px 10px; border: 1px solid #d3ddd3; border-radius: 999px; background: #fff; color: #526158; font-size: 10px; font-weight: 700; }
+.command-portfolio-lenses button.selected { border-color: #214e38; background: #214e38; color: #fff; }
+.portfolio-lens-board { margin: 0 34px 18px; overflow: hidden; border: 1px solid #c8dbcc; border-radius: 14px; background: #fff; }
+.portfolio-lens-board > header { padding: 22px; border-bottom: 1px solid #d7e4d9; background: #f3f8f3; }
+.portfolio-lens-board h2 { margin: 6px 0 7px; color: #183a31; font-size: 27px; letter-spacing: -.055em; }
+.portfolio-lens-board header p { max-width: 650px; margin: 0; color: #5c6c61; font-size: 12px; line-height: 1.45; }
+.team-lens-grid, .industry-lens-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #dfe8e0; }
+.team-lens-grid article, .industry-lens-grid article { display: grid; align-content: start; gap: 6px; min-height: 164px; padding: 18px 20px; background: #fff; }
+.team-lens-grid article > span, .industry-lens-grid article > span { color: #64766a; font-size: 10px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+.team-lens-grid h3, .industry-lens-grid strong { margin: 0; color: #204735; font-size: 17px; letter-spacing: -.035em; }
+.team-lens-grid p, .industry-lens-grid p { margin: 0; color: #617066; font-size: 11px; }
+.team-lens-grid b, .industry-lens-grid b { color: #9b5523; font-size: 11px; }
+.industry-lens-grid small { color: #617066; font-size: 10px; line-height: 1.35; }
+.team-lens-grid button, .industry-lens-grid button, .account-lens-list button { justify-self: start; margin-top: 5px; padding: 7px 9px; border: 1px solid #c7d8ca; border-radius: 7px; background: #f6faf6; color: #20543a; font-size: 10px; font-weight: 700; }
+.account-lens-list article { display: grid; grid-template-columns: 1.25fr 1fr auto; gap: 18px; align-items: center; padding: 16px 20px; border-bottom: 1px solid #e4ece5; }
+.account-lens-list article:last-child { border-bottom: 0; }
+.account-lens-list span { color: #718176; font-size: 10px; font-weight: 700; }
+.account-lens-list h3 { margin: 3px 0; color: #204735; font-size: 16px; letter-spacing: -.035em; }
+.account-lens-list p, .account-lens-list small { display: block; margin: 0; color: #607066; font-size: 10px; line-height: 1.4; }
+.account-lens-list b { display: block; margin-bottom: 5px; color: #315842; font-size: 11px; }
+@media (max-width: 800px) { .command-portfolio-lenses, .portfolio-lens-board { margin-left: 18px; margin-right: 18px; }.team-lens-grid, .industry-lens-grid { grid-template-columns: 1fr; }.account-lens-list article { grid-template-columns: 1fr; gap: 9px; } }
