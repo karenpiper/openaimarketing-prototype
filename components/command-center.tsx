@@ -90,7 +90,21 @@ function BusinessSnapshot({ onOpen }: { onOpen: (view: View) => void }) {
     { view: "discovery", amount: "26", label: "workflows in flight", detail: "19 on track; 5 being watched; 2 blocked by an unresolved dependency", tone: "attention" },
     { view: "orchestration", amount: "$38.4M", label: "illustrative AAR realized", detail: "42-day buying-group velocity; 6.4-day release-ready cadence" },
   ];
-  return <section className="business-snapshot"><header><div><span className="command-eyebrow">Enterprise operating snapshot · last 24 hours</span><h3>What the rest of the business is doing</h3></div><span>Click any stage to inspect its queue</span></header><div>{status.map((item) => <button key={item.view} className={item.tone ?? ""} onClick={() => onOpen(item.view)}><span>{views[item.view].number} · {views[item.view].label}</span><strong>{item.amount}</strong><b>{item.label}</b><small>{item.detail}</small></button>)}</div></section>;
+  return <><section className="business-snapshot"><header><div><span className="command-eyebrow">Enterprise operating snapshot · last 24 hours</span><h3>What the rest of the business is doing</h3></div><span>Click any stage to inspect its queue</span></header><div>{status.map((item) => <button key={item.view} className={item.tone ?? ""} onClick={() => onOpen(item.view)}><span>{views[item.view].number} · {views[item.view].label}</span><strong>{item.amount}</strong><b>{item.label}</b><small>{item.detail}</small></button>)}</div></section><MarketingOpsHealth /></>;
+}
+
+function MarketingOpsHealth() {
+  const [selected, setSelected] = useState("Data foundation & governance");
+  const domains = [
+    { name: "Data foundation & governance", health: "Watch", detail: "3 signal-confidence exceptions and 12 identity requests are within SLA; 1 source-quality issue needs a steward this week." },
+    { name: "Campaign operations & governance", health: "Healthy", detail: "18 launches are in production. QA, claims and consent checks are holding the right work; no escalation is needed today." },
+    { name: "Demand & ABM programs", health: "Action", detail: "Two enterprise response opportunities are competing for limited buying-group contact capacity." },
+    { name: "Buying-group & lifecycle orchestration", health: "Watch", detail: "26 active workflows: 19 on track, 5 being watched and 2 held for unresolved dependencies." },
+    { name: "Sales alignment & revenue operations", health: "Action", detail: "Four account handoffs are approaching their service-level target. Revenue programs owns the follow-through." },
+    { name: "Measurement, planning & investment", health: "Healthy", detail: "Contribution signals are updating the portfolio: $38.4M illustrative AAR realized and 42-day buying-group velocity." },
+  ];
+  const active = domains.find((domain) => domain.name === selected) ?? domains[0];
+  return <section className="marketing-ops-health"><header><div><span className="command-eyebrow">B2B marketing operations health</span><h3>The rest of Jeff’s remit</h3><p>The air-traffic controller coordinates work across these operating domains; it does not replace the teams that own them.</p></div></header><div className="ops-domain-grid">{domains.map((domain) => <button key={domain.name} className={`${selected === domain.name ? "selected" : ""} ${domain.health.toLowerCase()}`} onClick={() => setSelected(domain.name)}><span>{domain.health}</span><b>{domain.name}</b></button>)}</div><div className="ops-domain-detail"><span>Selected domain</span><b>{active.name}</b><p>{active.detail}</p></div></section>;
 }
 
 function CapabilityRoles({ config }: { config: (typeof views)[View] }) { return <div className="capability-roles"><p><b>Business outcome:</b> {config.outcome}</p><div><span><b>Function</b> {config.function}</span><span><b>Benefit</b> {config.benefit}</span></div><small>This prototype illustrates the operating capability and its benefit; implementation choices remain open.</small></div>; }
