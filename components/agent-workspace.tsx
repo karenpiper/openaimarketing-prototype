@@ -260,9 +260,19 @@ function MorganScreen({
           <div className="monitor-toolbar">
             <span className="workspace-title">ChatGPT Work</span>
             <span className="workspace-project">Enterprise marketing</span>
-            <span className="workspace-user" aria-label="Morgan's profile">
-              M
-            </span>
+            {onCommandCenter ? (
+              <button
+                className="workspace-user workspace-user-switch"
+                onClick={onCommandCenter}
+                aria-label="Switch to Jeff's controller view"
+              >
+                M
+              </button>
+            ) : (
+              <span className="workspace-user" aria-label="Morgan's profile">
+                M
+              </span>
+            )}
           </div>
           <div
             className="workspace-desktop"
