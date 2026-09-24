@@ -260,19 +260,9 @@ function MorganScreen({
           <div className="monitor-toolbar">
             <span className="workspace-title">ChatGPT Work</span>
             <span className="workspace-project">Enterprise marketing</span>
-            {onCommandCenter ? (
-              <button
-                className="workspace-user workspace-user-switch"
-                onClick={onCommandCenter}
-                aria-label="Switch to Jeff's controller view"
-              >
-                M
-              </button>
-            ) : (
-              <span className="workspace-user" aria-label="Morgan's profile">
-                M
-              </span>
-            )}
+            <span className="workspace-user" aria-label="Morgan's profile">
+              M
+            </span>
           </div>
           <div
             className="workspace-desktop"
@@ -292,11 +282,6 @@ function MorganScreen({
               >
                 <span aria-hidden="true">＋</span> New chat
               </button>
-              {onCommandCenter && (
-                <button className="command-center-link" onClick={onCommandCenter}>
-                  <span aria-hidden="true">◫</span> Command center
-                </button>
-              )}
               {onRestart && (
                 <button className="restart-chat" onClick={onRestart}>
                   <span aria-hidden="true">↺</span> Restart prototype
