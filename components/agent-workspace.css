@@ -5773,3 +5773,12 @@
 .ops-domain-grid button > .ops-domain-status { display:flex; align-items:center; gap:5px; justify-self:start; padding:0; border-radius:0; background:transparent; color:#61746a; font-size:9px; font-weight:750; letter-spacing:.06em; text-transform:uppercase; }.ops-domain-grid button > .ops-domain-status i { display:block; width:7px; height:7px; border-radius:50%; background:#5c9a70; }.ops-domain-grid button.action > .ops-domain-status { background:transparent; color:#9b5c25; }.ops-domain-grid button.action > .ops-domain-status i { background:#c97b38; }.ops-domain-grid button.watch > .ops-domain-status { background:transparent; color:#7b6c29; }.ops-domain-grid button.watch > .ops-domain-status i { background:#b4a044; }
 /* Queues are focused drill-downs, not a second navigation system */
 .command-queue-breadcrumb { margin-top:16px; padding-bottom:12px; border-bottom:1px solid #dfe7e0; }.command-queue-breadcrumb b { color:#244c36; }.command-operation { margin-top:0; }.command-operation-header { padding-top:18px; }.command-operation-header .command-attention-count { display:none; }
+/* Jeff's remit: each domain offers one clear operational next step. */
+.ops-domain-grid article { display:grid; align-content:start; gap:8px; min-height:136px; padding:14px; border:1px solid #d8e2d9; border-radius:9px; background:#fff; color:#2b503b; }
+.ops-domain-grid article.action { border-color:#ead3bf; }
+.ops-domain-grid article.watch { border-color:#e3dfbd; }
+.ops-domain-grid article > .ops-domain-status { display:flex; align-items:center; gap:5px; color:#61746a; font-size:9px; font-weight:750; letter-spacing:.06em; text-transform:uppercase; }
+.ops-domain-grid article > .ops-domain-status i { width:7px; height:7px; border-radius:50%; background:#5c9a70; }
+.ops-domain-grid article.action > .ops-domain-status { color:#9b5c25; }.ops-domain-grid article.action > .ops-domain-status i { background:#c97b38; }
+.ops-domain-grid article.watch > .ops-domain-status { color:#7b6c29; }.ops-domain-grid article.watch > .ops-domain-status i { background:#b4a044; }
+.ops-domain-grid article b { font-size:12px; line-height:1.25; }.ops-domain-grid article p { margin:0; min-height:30px; color:#607166; font-size:10px; line-height:1.4; }.ops-domain-grid article button { justify-self:start; margin-top:auto; padding:0; border:0; background:transparent; color:#1d593c; font-size:10px; font-weight:750; }
