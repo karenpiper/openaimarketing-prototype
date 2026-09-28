@@ -5837,3 +5837,12 @@
 .workflow-progress span { color:#6d8172; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
 .workflow-progress p { margin:8px 0 0; color:#5c6f62; }
 @keyframes workflowPulse { 50% { transform:scale(1.08); box-shadow:0 0 0 7px rgba(71,139,93,.13); } }
+
+/* Explain the operational basis for an in-flight agent action without exposing private model reasoning. */
+.reasoning-layer { margin-top:14px; padding:14px 15px; background:#fff; border:1px solid #d8e6da; border-radius:10px; }
+.reasoning-layer > span { display:block; color:#54705d; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.reasoning-layer dl { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:10px 0 0; }
+.reasoning-layer dl div { min-width:0; }
+.reasoning-layer dt { color:#6b7e70; font-size:12px; font-weight:800; }
+.reasoning-layer dd { margin:4px 0 0; color:#274a38; font-size:13px; line-height:1.35; }
+@media (max-width: 760px) { .reasoning-layer dl { grid-template-columns:1fr; gap:10px; } }
