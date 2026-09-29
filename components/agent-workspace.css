@@ -5862,3 +5862,32 @@
 .control-context footer > span { flex:0 0 145px; margin:0; }
 .control-context footer p { margin:0; color:#45634f; }
 @media (max-width: 860px) { .control-context-grid { grid-template-columns:1fr; } .control-context-grid article { border-right:0; border-bottom:1px solid #dbe8dd; } .control-context > header, .control-context footer { display:block; } .control-context > header > span { display:block; margin-top:8px; white-space:normal; } .control-context footer > span { margin-bottom:5px; } }
+
+/* Jeff's home follows an operating day rather than a catalogue of overlapping queues. */
+.day-in-life { margin:26px 0; border:1px solid #d5e2d7; border-radius:15px; overflow:hidden; background:#fff; }
+.day-in-life > header { display:flex; justify-content:space-between; gap:24px; padding:22px 24px; border-bottom:1px solid #dfe9e1; background:#fbfdfb; }
+.day-in-life h3 { max-width:770px; margin:4px 0 7px; color:#1c4430; font-size:24px; line-height:1.12; }
+.day-in-life p { margin:0; color:#5a6f60; line-height:1.45; }
+.day-in-life > header > button { align-self:center; white-space:nowrap; }
+.day-timeline article { display:grid; grid-template-columns:130px minmax(0, 1fr) auto; gap:24px; padding:21px 24px; border-bottom:1px solid #e1eae2; }
+.day-timeline article:last-child { border-bottom:0; }
+.day-time { display:flex; align-items:flex-start; gap:10px; color:#45654e; font-size:13px; font-weight:800; }
+.day-time i { display:block; width:9px; height:9px; margin-top:4px; border-radius:50%; background:#9abda3; }
+.day-time i.needs-jeff { background:#c97833; box-shadow:0 0 0 4px #fff0df; }
+.day-time i.working { background:#4a8c64; box-shadow:0 0 0 4px #edf7ef; }
+.day-time i.verified { background:#2e7850; }
+.day-time i.scheduled { background:#889c8d; }
+.day-event > span { display:block; color:#748779; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.day-event h4 { margin:5px 0 5px; color:#224a35; font-size:18px; line-height:1.25; }
+.day-event p { font-size:14px; }
+.day-action { align-self:center; }
+.day-action button { min-width:150px; }
+@media (max-width: 760px) { .day-in-life > header, .day-timeline article { display:block; } .day-in-life > header > button { margin-top:16px; } .day-event { margin:11px 0; } .day-action button { width:100%; } }
+
+.day-delegation { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:12px; padding:18px 24px; background:#f4f8f4; border-bottom:1px solid #dfe9e1; }
+.day-delegation textarea { min-height:74px; padding:12px 14px; border:1px solid #bfd3c2; border-radius:10px; font:inherit; resize:vertical; }
+.day-delegation > button { align-self:end; }
+.day-delegation > div { grid-column:1 / -1; display:grid; grid-template-columns:150px minmax(0, 1fr) auto; gap:15px; align-items:center; padding:14px; border:1px solid #cfe0d1; border-radius:10px; background:#fff; }
+.day-delegation span { color:#667d6c; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.day-delegation b { color:#294d37; font-size:14px; line-height:1.4; }
+@media (max-width:760px) { .day-delegation { grid-template-columns:1fr; } .day-delegation > button { width:100%; } .day-delegation > div { grid-template-columns:1fr; } }
