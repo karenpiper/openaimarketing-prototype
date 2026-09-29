@@ -5846,3 +5846,19 @@
 .reasoning-layer dt { color:#6b7e70; font-size:12px; font-weight:800; }
 .reasoning-layer dd { margin:4px 0 0; color:#274a38; font-size:13px; line-height:1.35; }
 @media (max-width: 760px) { .reasoning-layer dl { grid-template-columns:1fr; gap:10px; } }
+
+/* Persistent portfolio context prevents an account workflow from becoming an isolated completion screen. */
+.control-context { margin:22px 0; border:1px solid #cddfd1; border-radius:14px; overflow:hidden; background:#fbfdfb; }
+.control-context > header { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; padding:17px 20px; background:#f1f7f2; border-bottom:1px solid #dbe8dd; }
+.control-context h3 { margin:4px 0 0; color:#1d4430; font-size:18px; }
+.control-context > header > span { color:#587260; font-size:13px; white-space:nowrap; }
+.control-context-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); }
+.control-context-grid article { padding:18px 20px; border-right:1px solid #dbe8dd; }
+.control-context-grid article:last-child { border-right:0; }
+.control-context-grid span, .control-context footer > span { display:block; margin-bottom:6px; color:#6a8070; font-size:11px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+.control-context-grid b { display:block; color:#214a34; font-size:15px; line-height:1.35; }
+.control-context-grid p { margin:7px 0 0; color:#5d7163; font-size:14px; line-height:1.4; }
+.control-context footer { display:flex; gap:20px; padding:13px 20px; border-top:1px solid #dbe8dd; }
+.control-context footer > span { flex:0 0 145px; margin:0; }
+.control-context footer p { margin:0; color:#45634f; }
+@media (max-width: 860px) { .control-context-grid { grid-template-columns:1fr; } .control-context-grid article { border-right:0; border-bottom:1px solid #dbe8dd; } .control-context > header, .control-context footer { display:block; } .control-context > header > span { display:block; margin-top:8px; white-space:normal; } .control-context footer > span { margin-bottom:5px; } }
